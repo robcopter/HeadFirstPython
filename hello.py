@@ -12,7 +12,11 @@ def hello():
 
 @app.route("/offer")
 def getOffers():
-    return "Offer List"
+    pageURL=os.environ.get("JSON_URL_1")
+    page = urllib2.urlopen(pageURL).read()
+    jsonData=json.loads(page)
+    zero=jsonData['homepage_layout'][0]['items'][0]['name']
+    return zero
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
