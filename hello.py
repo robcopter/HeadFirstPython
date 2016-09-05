@@ -15,8 +15,7 @@ def getOffers():
     pageURL=os.environ.get("JSON_URL_1")
     page = urllib2.urlopen(pageURL).read()
     jsonData=json.loads(page)
-    zero=jsonData['homepage_layout'][0]['items'][0]['name']
-    return zero
+    # zero=jsonData['homepage_layout'][0]['items'][0]['name']
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
